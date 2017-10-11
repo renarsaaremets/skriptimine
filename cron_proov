@@ -1,0 +1,16 @@
+#!/bin/bash
+#prindib kuup2eva ja kellaaja ja salvestab
+#vajalikud andmed faili sisse.
+Kokku=`date`;
+Kuu=`date | awk -F&quot; &quot; &#39;{ print $2 }&#39;`;
+Kuup2ev=`date | awk -F&quot; &quot; &#39;{ print $3 }&#39;`;
+P2ev=`date | awk -F&quot; &quot; &#39;{ print $1 }&#39;`;
+Kellaaeg=`date | awk -F&quot; &quot; &#39;{ print $4 }&#39;`;
+Riik=`date | awk -F&quot; &quot; &#39;{ print $5 }&#39;`;
+Aasta=`date | awk -F&quot; &quot; &#39;{ print $6 }&#39;`;
+Number=`date | awk -F&quot; &quot; &#39;{ print $4 }&#39; | awk -F: &#39;{ print $2
+}&#39;`;
+# echo k2sk peab olema yhe reaga
+echo &quot;T2nane kuup2ev on ${Kuu} ${Kuup2ev} ${Aasta}. Kell on
+${Kellaaeg}. See on ${Riik} aeg.&quot; &gt;
+/home/user/temp/proov_cron${Number}.txt
