@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#kasutajad_failist
+#
+if [ $# -ne 1 ]; then
+	echo "Kasutusjuhend: $0 kasutajad_failist"
+else
+   kasutajanimed=$1
+  if [ -f $kasutajanimed -a -r $kasutajanimed ]; then
+	echo "fail on korras"
+	for nimi in $(cat $kasutajanimed)
+       do
+	sh lisa_kasutaja $nimi
+	done
+      else
+	echo "probleem failiga $kasutajad_failist"
+      fi
+fi
